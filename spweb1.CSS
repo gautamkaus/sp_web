@@ -99,7 +99,7 @@ nav ul li a:hover {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: url('E:/www.jpg') no-repeat center center/cover;
+    background: url('./images/www.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -149,7 +149,7 @@ body {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: url('E:/www.jpg') no-repeat center center/cover;
+    background: url('./images/www.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
