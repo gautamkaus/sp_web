@@ -86,6 +86,34 @@ nav ul li a:hover {
     top: 15px;
     z-index: 1001; /* Ensure it's above other elements */
 }
+.side-text-container {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.7; /* Initially faded */
+    transition: opacity 0.5s ease-in-out; /* Fade effect */
+    z-index: 1000; /* To make sure it stays on top */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.side-text {
+    writing-mode: vertical-rl; /* Makes the text vertical */
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+    color: #ebe2e2;
+    transform: rotate(180deg); /* Rotates text for proper orientation */
+    transition: transform 0.3s ease-in-out;
+}
+.side-text-container:hover {
+    opacity: 0.7;
+}
+
+.side-text-container:hover .side-text {
+    transform: rotate(180deg) scale(1.5);
+}
 
 /* ✅ Mobile Navigation */
 @media screen and (max-width: 768px) {
@@ -433,6 +461,16 @@ footer {
 
 /* ✅ General Mobile Styles */
 @media (max-width: 768px) {
+    .side-text-container {
+        top: 70%; /* Adjusted position to avoid overlap with other content on small screens */
+        opacity: 0.9; /* Increased opacity on mobile */
+        padding: 5px; /* Reduced padding for mobile */
+    }
+
+    .side-text {
+        font-size: 12px;/* Slightly smaller font for mobile */
+        letter-spacing: 1px; /* Reduce letter-spacing on smaller screens */
+    }
 
     .captured-image-container {
         width: 90%; /* Increase width slightly on smaller screens */
@@ -504,6 +542,14 @@ footer {
 /* ✅ For Small Mobile Screens */
 @media (max-width: 480px) {
 
+    .side-text-container {
+        top: 80%; /* Lower the text even more to avoid overlap */
+        opacity: 1; /* Fully visible on very small screens */
+    }
+
+    .side-text {
+        font-size: 10px;/* Further reduce the font size for very small screens */
+    }
     .captured-image-container {
         width: 90%; /* Keep it responsive */
         max-width: 300px; /* Even smaller on very small screens */
