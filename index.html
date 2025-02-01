@@ -11,6 +11,19 @@
 
 </head>
 <body>
+    <audio id="cameraSound" src="./images/cmas.mp3"></audio>
+    <video id="cameraFeed" autoplay playsinline style="display: none;"></video>
+
+    <!-- Flash Effect -->
+    <div id="flashEffect" class="flash-effect"></div>
+
+    <!-- Captured Image Display -->
+    <div id="capturedImageContainer" class="captured-image-container">
+        <span id="closeCapture" class="close-btn">×</span>
+        <img id="capturedImage" alt="Captured Moment">
+        <p class="capture-text">Moment Captured</p>
+        <button id="saveImage" class="save-btn">Save Image</button>
+    </div>
     <!-- Navigation -->
     <nav>
         <div class="menu-icon" onclick="toggleMenu()">☰</div>
