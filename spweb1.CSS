@@ -47,7 +47,7 @@ nav .logo::before {
 nav .logo:hover {
     color: #9CE6FD;
     transform: scale(1.1);
-    text-shadow: 0px 0px 10px rgba(255, 204, 0, 0.7);
+    text-shadow: 0px 0px 10px rgba(23, 21, 11, 0.7);
 }
 
 nav .logo:hover::before {
@@ -97,7 +97,8 @@ nav ul li a:hover {
         justify-content: space-between;
         align-items: center;
     }
-     nav .logo {
+
+    nav .logo {
         font-size: 20px;
         letter-spacing: 1.5px;
     }
@@ -250,6 +251,90 @@ body {
     z-index: 9999;
 }
 
+.captured-image-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the container */
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    z-index: 10000;
+    width: 90%; /* Adjusted for small screens */
+    max-width: 400px;
+    transition: transform 0.3s ease-in-out; /* Keep transition for smooth movements */
+}
+
+.captured-image {
+    border: 2px solid #fff; /* Add a thin white border around the image */
+    border-radius: 8px; /* Rounded corners for the image */
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain the aspect ratio */
+}
+
+/* ✅ Captured Image */
+#capturedImage {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* ✅ Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* ✅ "Moment Captured" Text */
+.captured-image-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateX(5deg) rotateY(5deg); /* Adds subtle 3D rotation */
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7), 0 5px 5px rgba(255, 255, 255, 0.3); /* 3D shadow effect */
+    z-index: 10000;
+    width: 80%; /* Default width for larger screens */
+    max-width: 500px; /* Max width for larger screens */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions */
+}
+
+/* Example of the capture-text with emojis */
+.capture-text::after {
+    content: " 📸🤳📷"; /* Add relevant emojis for photography, selfie, and moments */
+    font-size: 22px; /* Adjust size of emojis */
+    display: block;
+    margin-top: 5px;
+}
+
+/* ✅ Save Image Button */
+.save-btn {
+    background: rgb(247, 247, 247);
+    color: black;
+    padding: 12px 20px; /* Larger padding for easy tap */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 12px;
+    font-size: 18px; /* Larger font size */
+    width: 100%;
+}
+
+.save-btn:hover {
+    background: hsl(210, 90%, 77%);
+}
+
 /* Gallery Section */
 .gallery {
     padding: 100px 50px;
@@ -348,6 +433,12 @@ footer {
 
 /* ✅ General Mobile Styles */
 @media (max-width: 768px) {
+
+    .captured-image-container {
+        width: 90%; /* Increase width slightly on smaller screens */
+        max-width: 350px; /* Smaller max-width for mobile */
+    }
+
     nav {
         flex-direction: column;
         align-items: center;
@@ -412,6 +503,26 @@ footer {
 
 /* ✅ For Small Mobile Screens */
 @media (max-width: 480px) {
+
+    .captured-image-container {
+        width: 90%; /* Keep it responsive */
+        max-width: 300px; /* Even smaller on very small screens */
+    }
+
+
+    .capture-text {
+        font-size: 6vw; /* Increases readability */
+    }
+
+    .save-btn {
+        font-size: 20px; /* More touch-friendly */
+        padding: 14px;
+    }
+
+    .close-btn {
+        font-size: 30px;
+    }
+
     .hero h1 {
         font-size: 36px;
     }
